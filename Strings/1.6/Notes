@@ -1,0 +1,8 @@
+- first attempt was ok, matched bad example in book.
+- same problem, string concatenation is in O(n^2) time. 
+- An analogue of StringBuilder in python would be required. 
+- the book discusses an option to determine wether the output would be shorter before starting the compression loop. 
+- benefits to this are decreased space (string builder could be set to optimal size), drawbacks are a second loop with 
+duplicated code
+
+
