@@ -13,7 +13,11 @@ class Node:
           n.next = end
 
      
-
+class Index:
+     value = None
+     def __init__(self):
+          self.value = 0
+     
 
 
 
