@@ -24,7 +24,7 @@ class Stack:
           node = self.top
           arr = []
           while node != None:
-               arr.append(node.data)
+               arr.insert(0,node.data) #not the best
                node = node.next
           return arr
 
