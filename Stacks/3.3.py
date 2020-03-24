@@ -63,15 +63,50 @@ class SetOfStacks:
                print("Printing Stack " + str(i))
                print(Stack.returnAsArray())
 
+     def popAt(self, index):
+          if index >= 0 and index < len(self.Stacks):
+               result = self.Stacks[index].pop()
+             
+               arrs = []
+               newIndex = index
+               while newIndex <  len(self.Stacks):
+                  
+                    arr = self.Stacks[newIndex].returnAsArray()
+                    arrs.append(arr)
+                    newIndex +=1
+               #print(arrs)
+               newIndex = 0
+              
+               while newIndex < len(arrs):
+                    j = index + 1
+                    if j < len(arrs):
+                         itemToAdd = arrs[j].pop(0)
+                       #  print(itemToAdd, arrs[j])
+                         arrs[newIndex].append(itemToAdd)
+                    stack = Stack()
+                    stack.generateFromArray(arrs[newIndex])
+                    self.Stacks[index] = stack
+                   
+                    newIndex += 1
+                    index +=1 
+               #print (arrs)          
+               return result
+                  
+          else: raise Exception("Bad Index")
+
 import sys
 
 if __name__ == '__main__':
 
      start = time.perf_counter()
-     capacity = 7
+     capacity = 3
      arr = [11,5,6,8,3,5,8,9,10,3, 5, 99]    
      print(arr)
      Set = SetOfStacks(capacity)
      Set.generateFromArray(arr) 
      Set.printSet()
+     result = Set.popAt(0)
+     print(result)
+     Set.printSet()
+    # Set.printSet()
    
